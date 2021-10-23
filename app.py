@@ -12,23 +12,9 @@ classifier = pickle.load(pickle_in)
 def prediction(Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age):   
  
     # Pre-processing user input    
-#     if Gender == "Male":
-#         Gender = 0
-#     else:
-#         Gender = 1
- 
-#     if Married == "Unmarried":
-#         Married = 0
-#     else:
-#         Married = 1
- 
-#     if Credit_History == "Unclear Debts":
-#         Credit_History = 0
-#     else:
-#         Credit_History = 1  
- 
-#     LoanAmount = LoanAmount / 1000
- 
+
+  
+  
     # Making predictions 
     prediction = classifier.predict( 
         [[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
@@ -45,7 +31,7 @@ def main():
     # front end elements of the web page 
     html_temp = """ 
     <div style ="background-color:yellow;padding:13px"> 
-    <h1 style ="color:black;text-align:center;">Streamlit Loan Prediction ML App</h1> 
+    <h1 style ="color:black;text-align:center;">diabetes detection App</h1> 
     </div> 
     """
       
