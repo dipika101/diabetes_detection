@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-%matplotlib inline
+# %matplotlib inline
 dia_data = pd.read_csv("diabetes.csv")
 dia_data.shape
 dia_data.head()
@@ -134,7 +134,7 @@ pickle_out = open("classifier.pkl", mode = "wb")
 pickle.dump(rf, pickle_out) 
 pickle_out.close()
 
-%%writefile app.py
+# %%writefile app.py
  
 import pickle
 import streamlit as st
