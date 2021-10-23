@@ -1,4 +1,3 @@
-%%writefile app.py
  
 import pickle
 import streamlit as st
@@ -13,7 +12,23 @@ classifier = pickle.load(pickle_in)
 def prediction(Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age):   
  
     # Pre-processing user input    
-
+#     if Gender == "Male":
+#         Gender = 0
+#     else:
+#         Gender = 1
+ 
+#     if Married == "Unmarried":
+#         Married = 0
+#     else:
+#         Married = 1
+ 
+#     if Credit_History == "Unclear Debts":
+#         Credit_History = 0
+#     else:
+#         Credit_History = 1  
+ 
+#     LoanAmount = LoanAmount / 1000
+ 
     # Making predictions 
     prediction = classifier.predict( 
         [[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
