@@ -1,84 +1,84 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 # %matplotlib inline
-dia_data = pd.read_csv("diabetes.csv")
-dia_data.shape
-dia_data.head()
-dia_data.info()
-dia_data.shape
-dia_data.isnull().sum()
-dia_data.duplicated().sum()
-# droping duplicate data
-dia_data.drop_duplicates(inplace = True)
-dia_data.shape
-print("total no of rows :: {} ".format(len(dia_data)))
-print("total no of rows missing Pregnancies :: {} ".format(len(dia_data.loc[dia_data['Pregnancies'] == 0])))
-print("total no of rows missing glucose :: {} ".format(len(dia_data.loc[dia_data['Glucose'] == 0])))
-print("total no of rows missing bp :: {} ".format(len(dia_data.loc[dia_data['BloodPressure'] == 0])))
-print("total no of rows missing insulin :: {} ".format(len(dia_data.loc[dia_data['Insulin'] == 0])))
-print("total no of rows missing SkinThickness :: {} ".format(len(dia_data.loc[dia_data['SkinThickness'] == 0])))
-print("total no of rows missing DiabetesPedigreeFunction :: {} ".format(len(dia_data.loc[dia_data['DiabetesPedigreeFunction'] == 0])))
-print("total no of rows missing bmi :: {} ".format(len(dia_data.loc[dia_data['BMI'] == 0])))
-print("total no of rows missing age :: {} ".format(len(dia_data.loc[dia_data['Age'] == 0])))
-print("total no of rows missing Pregnancies :: {} ".format(len(dia_data.loc[dia_data['Pregnancies'] == 0])))
+# dia_data = pd.read_csv("diabetes.csv")
+# dia_data.shape
+# dia_data.head()
+# dia_data.info()
+# dia_data.shape
+# dia_data.isnull().sum()
+# dia_data.duplicated().sum()
+# # droping duplicate data
+# dia_data.drop_duplicates(inplace = True)
+# dia_data.shape
+# print("total no of rows :: {} ".format(len(dia_data)))
+# print("total no of rows missing Pregnancies :: {} ".format(len(dia_data.loc[dia_data['Pregnancies'] == 0])))
+# print("total no of rows missing glucose :: {} ".format(len(dia_data.loc[dia_data['Glucose'] == 0])))
+# print("total no of rows missing bp :: {} ".format(len(dia_data.loc[dia_data['BloodPressure'] == 0])))
+# print("total no of rows missing insulin :: {} ".format(len(dia_data.loc[dia_data['Insulin'] == 0])))
+# print("total no of rows missing SkinThickness :: {} ".format(len(dia_data.loc[dia_data['SkinThickness'] == 0])))
+# print("total no of rows missing DiabetesPedigreeFunction :: {} ".format(len(dia_data.loc[dia_data['DiabetesPedigreeFunction'] == 0])))
+# print("total no of rows missing bmi :: {} ".format(len(dia_data.loc[dia_data['BMI'] == 0])))
+# print("total no of rows missing age :: {} ".format(len(dia_data.loc[dia_data['Age'] == 0])))
+# print("total no of rows missing Pregnancies :: {} ".format(len(dia_data.loc[dia_data['Pregnancies'] == 0])))
 
-fig , s= plt.subplots(3,2, figsize = (15,10))
-s[0][0].set_title("Histogram of pregnancies column")
-s[1][0].set_title("Histogram of Glucose column")
-s[2][0].set_title("Histogram of BloodPressure column")
-s[0][1].set_title("Histogram of Insulin column")
-s[1][1].set_title("Histogram of SkinThickness column")
-s[2][1].set_title("Histogram of BMI column")
+# fig , s= plt.subplots(3,2, figsize = (15,10))
+# s[0][0].set_title("Histogram of pregnancies column")
+# s[1][0].set_title("Histogram of Glucose column")
+# s[2][0].set_title("Histogram of BloodPressure column")
+# s[0][1].set_title("Histogram of Insulin column")
+# s[1][1].set_title("Histogram of SkinThickness column")
+# s[2][1].set_title("Histogram of BMI column")
 
-s[0][0].hist(dia_data['Pregnancies'], rwidth = 0.8)
-s[1][0].hist(dia_data['Glucose'], rwidth = 0.8)
-s[2][0].hist(dia_data['BloodPressure'], rwidth = 0.8)
-s[0][1].hist(dia_data['Insulin'] ,rwidth = 0.8)
-s[1][1].hist(dia_data['SkinThickness'],rwidth = 0.8)
-s[2][1].hist(dia_data['BMI'], rwidth = 0.8)
-plt.show()
+# s[0][0].hist(dia_data['Pregnancies'], rwidth = 0.8)
+# s[1][0].hist(dia_data['Glucose'], rwidth = 0.8)
+# s[2][0].hist(dia_data['BloodPressure'], rwidth = 0.8)
+# s[0][1].hist(dia_data['Insulin'] ,rwidth = 0.8)
+# s[1][1].hist(dia_data['SkinThickness'],rwidth = 0.8)
+# s[2][1].hist(dia_data['BMI'], rwidth = 0.8)
+# plt.show()
 
-plt.figure(figsize=(15,5))
-sns.scatterplot(x= 'Age',y= 'Pregnancies', hue = 'Outcome', data = dia_data)
-plt.show()
+# plt.figure(figsize=(15,5))
+# sns.scatterplot(x= 'Age',y= 'Pregnancies', hue = 'Outcome', data = dia_data)
+# plt.show()
 
-plt.figure(figsize=(15,5))
-sns.scatterplot(x= 'Age',y= 'Glucose', hue = 'Outcome', data = dia_data)
-plt.show()
+# plt.figure(figsize=(15,5))
+# sns.scatterplot(x= 'Age',y= 'Glucose', hue = 'Outcome', data = dia_data)
+# plt.show()
 
-plt.figure(figsize=(15,5))
-sns.scatterplot(x= 'Age',y= 'BloodPressure', hue = 'Outcome', data = dia_data)
-plt.show()
+# plt.figure(figsize=(15,5))
+# sns.scatterplot(x= 'Age',y= 'BloodPressure', hue = 'Outcome', data = dia_data)
+# plt.show()
 
-plt.figure(figsize=(15,5))
-sns.scatterplot(x= 'Age',y= 'SkinThickness', hue = 'Outcome', data = dia_data)
-plt.show()
+# plt.figure(figsize=(15,5))
+# sns.scatterplot(x= 'Age',y= 'SkinThickness', hue = 'Outcome', data = dia_data)
+# plt.show()
 
-plt.figure(figsize=(15,5))
-sns.scatterplot(x= 'Age',y= 'Insulin', hue = 'Outcome', data = dia_data)
-plt.show()
+# plt.figure(figsize=(15,5))
+# sns.scatterplot(x= 'Age',y= 'Insulin', hue = 'Outcome', data = dia_data)
+# plt.show()
 
-plt.figure(figsize=(15,5))
-sns.scatterplot(x= 'Age',y= 'BMI', hue = 'Outcome', data = dia_data)
-plt.show()
+# plt.figure(figsize=(15,5))
+# sns.scatterplot(x= 'Age',y= 'BMI', hue = 'Outcome', data = dia_data)
+# plt.show()
 
-plt.figure(figsize=(15,5))
-sns.scatterplot(x= 'Age',y= 'DiabetesPedigreeFunction', hue = 'Outcome', data = dia_data)
-plt.show()
+# plt.figure(figsize=(15,5))
+# sns.scatterplot(x= 'Age',y= 'DiabetesPedigreeFunction', hue = 'Outcome', data = dia_data)
+# plt.show()
 
-corr_data = dia_data.corr() # correlated metrics
-top_corr_features = corr_data.index
+# corr_data = dia_data.corr() # correlated metrics
+# top_corr_features = corr_data.index
 
-corr_data
+# corr_data
 
-top_corr_features
+# top_corr_features
 
-plt.figure(figsize = (8,5))
-# annot is used to show each values
-# cmap is used for color map on the graph
-sns.heatmap(corr_data, annot = True, cmap = 'RdYlGn')
+# plt.figure(figsize = (8,5))
+# # annot is used to show each values
+# # cmap is used for color map on the graph
+# sns.heatmap(corr_data, annot = True, cmap = 'RdYlGn')
 
 from sklearn.model_selection import train_test_split
 # features set (independent data)
